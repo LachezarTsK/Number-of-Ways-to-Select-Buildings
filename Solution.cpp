@@ -13,11 +13,12 @@ public:
 
 private:
     long long numberOfWaysWithAnyGroupSize(const string& input, const size_t groupSize) {
+        const char ascii_zero = 48;
         const size_t inputSize = input.length();
         vector<vector<long long>> groups(groupSize, vector<long long>(2));
 
         for (int i = 0; i < inputSize; i++) {
-            const int index = input[i] - '0';
+            const int index = input[i] - ascii_zero;
 
             groups[0][index]++;
             for (int j = 1; j < groupSize; j++) {
